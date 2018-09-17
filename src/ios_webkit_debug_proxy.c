@@ -239,6 +239,7 @@ iwdp_status iwdp_on_error(iwdp_t self, const char *format, ...) {
   va_end(args);
   printf("Suicide on error.");
   raise(SIGTERM);
+  return IWDP_ERROR;
 }
 
 void iwdp_log_connect(iwdp_iport_t iport) {
